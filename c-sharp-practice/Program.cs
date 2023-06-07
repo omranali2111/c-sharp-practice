@@ -5,10 +5,30 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        char a, e, i, o, u, chr;
+        int month;
+        char chr,grd;
 
+        WriteLine("enter number of a month(1-12): ");
+        month = int.Parse(ReadLine());
+        theMonth(month);
+        
         WriteLine("enter a char: ");
-        chr=(ReadLine()[0]);
+        chr = (ReadLine()[0]);
+        letter(chr);
+
+        WriteLine("enter your grade: ");
+        grd = (ReadLine()[0]);
+        theGrade(grd);
+
+
+    }
+
+    static void letter(char chr)
+    {
+        // task 1
+        char a, e, i, o, u;
+
+       
 
         switch (chr)
         {
@@ -17,19 +37,24 @@ internal class Program
             case 'i':
             case 'o':
             case 'u':
-                    WriteLine("this is Vowel letter");
+                WriteLine("this is Vowel letter");
                 break;
 
             default:
                 WriteLine("this is Consonant letter");
                 break;
 
+
+
         }
 
-        int month;
+    }
+    //task 2
 
-        WriteLine("enter number of a month(1-12): ");
-        month= int.Parse(ReadLine());
+    static void theMonth(int month)
+
+    {
+        
         switch (month)
         {
             case 1:
@@ -45,7 +70,7 @@ internal class Program
                 WriteLine("April");
                 break;
             case 5:
-               WriteLine("May");
+                WriteLine("May");
                 break;
             case 6:
                 WriteLine("June");
@@ -73,6 +98,40 @@ internal class Program
                 break;
         }
     }
+        //task 3
+
+    static void theGrade(char grd)
+    {
+        char A, B, C, D, F;
+        switch(grd)
+        {
+            case 'A':
+                WriteLine("excellent performance");
+                break;
+            case 'B':
+                WriteLine("Good performance");
+                break;
+            case 'C':
+                WriteLine("Average performance");
+                break;
+            case 'D':
+                WriteLine("Below Average performance");
+                break;
+            case 'F':
+                WriteLine("Failure performance");
+                break;
+
+            default:
+                WriteLine("invalid letter");
+                break;
+
+        }
+    }
 
 
-}
+       
+    }
+
+
+    
+

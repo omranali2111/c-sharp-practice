@@ -5,21 +5,24 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        int month;
+        int day,month;
         char chr,grd;
 
         WriteLine("enter number of a month(1-12): ");
         month = int.Parse(ReadLine());
         theMonth(month);
-        
+        WriteLine("************************************");
         WriteLine("enter a char: ");
         chr = (ReadLine()[0]);
         letter(chr);
-
+        WriteLine("************************************");
         WriteLine("enter your grade: ");
         grd = (ReadLine()[0]);
         theGrade(grd);
-
+        WriteLine("************************************");
+        WriteLine("enter number of a day(1-7): ");
+        day = int.Parse(ReadLine());
+        theDay(day);
 
     }
 
@@ -125,6 +128,38 @@ internal class Program
                 WriteLine("invalid letter");
                 break;
 
+        }
+    }
+
+    //task 4
+    static void theDay(int day)
+    {
+        switch (day)
+        {
+            case 1:
+                Console.WriteLine("Sunday");
+                break;
+            case 2:
+                Console.WriteLine("monday");
+                break;
+            case 3:
+                Console.WriteLine("tuesday");
+                break;
+            case 4:
+                Console.WriteLine("wednesday");
+                break;
+            case 5:
+                Console.WriteLine("thursday");
+                break;
+            case 6:
+                Console.WriteLine("Friday");
+                break;
+            case 7:
+                Console.WriteLine("saturday");
+                break;
+            default:
+                WriteLine("You have entered invalid number");
+                break;
         }
     }
 

@@ -5,7 +5,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        int day,month;
+        int day,month,num;
         char chr,grd;
 
         WriteLine("enter number of a month(1-12): ");
@@ -23,7 +23,12 @@ internal class Program
         WriteLine("enter number of a day(1-7): ");
         day = int.Parse(ReadLine());
         theDay(day);
-
+        WriteLine("************************************");
+        WriteLine("enter number to Calculate Fibonacci Series: ");
+        num = int.Parse(ReadLine());
+        Program obj = new Program();
+        //obj.nth(num);
+        WriteLine(obj.nth(num));
     }
 
     static void letter(char chr)
@@ -162,10 +167,24 @@ internal class Program
                 break;
         }
     }
+    // recursive function tasks
+    //task 1 Fibonacci Calculator
+    public int nth(int num)
+    {
+
+        if ((num == 0) || (num == 1))
+        {
+            return num;
+        }
+        else
+           
+            return nth(num-1) + nth(num - 2);
 
 
-       
+
     }
+
+}
 
 
     

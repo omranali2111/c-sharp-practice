@@ -7,7 +7,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        int day, month, num, num1, totl, totl1, n1, p2;
+        int day, month, num, num1, totl, totl1, n1, p2,num11;
         char chr, grd;
         string strg;
 
@@ -60,7 +60,10 @@ internal class Program
         WriteLine("write a string to check if it's palindrom ");
         strg=Convert.ToString(ReadLine());
         WriteLine(palindrome(strg));
-
+        WriteLine("************************************");
+        WriteLine("enter number : ");
+        num11= int.Parse(ReadLine());
+        WriteLine(calc(num11));
 
 
 
@@ -276,6 +279,15 @@ internal class Program
 
         return palindrome(strg.Substring(1, strg.Length - 2));
       
+    }
+    //the sum of digits of a given number using recursive function
+    static int calc(int num11) 
+    {
+        if (num11 < 10)
+        {
+            return num11;
+        }
+        return num11%10+calc(num11/10);
     }
 }
 

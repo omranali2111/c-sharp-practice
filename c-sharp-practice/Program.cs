@@ -5,7 +5,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        int day,month,num;
+        int day,month,num,num1;
         char chr,grd;
 
         WriteLine("enter number of a month(1-12): ");
@@ -26,9 +26,17 @@ internal class Program
         WriteLine("************************************");
         WriteLine("enter number to Calculate Fibonacci Series: ");
         num = int.Parse(ReadLine());
-        Program obj = new Program();
+       // Program obj = new Program();
         //obj.nth(num);
-        WriteLine(obj.nth(num));
+        WriteLine(nth(num));
+        WriteLine("************************************");
+
+        WriteLine("Enter a number to calculate  the factorial: ");
+        num1 = int.Parse(ReadLine());
+
+        Console.WriteLine("Factorial of " + num1 + " is " + factorial(num1));
+
+
     }
 
     static void letter(char chr)
@@ -169,7 +177,7 @@ internal class Program
     }
     // recursive function tasks
     //task 1 Fibonacci Calculator
-    public int nth(int num)
+    static int nth(int num)
     {
 
         if ((num == 0) || (num == 1))
@@ -183,6 +191,22 @@ internal class Program
 
 
     }
+
+    static int factorial(int num)
+    {
+        // termination condition
+        if (num == 0)
+            return 1;
+        else
+            // recursive call
+            return num * factorial(num - 1);
+
+
+
+    }
+
+
+
 
 }
 

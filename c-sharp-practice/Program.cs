@@ -6,8 +6,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        int day,month,num,num1,totl,totl1;
-        char chr,grd;
+        int day, month, num, num1, totl, totl1, n1, p2;
+        char chr, grd;
 
         WriteLine("enter number of a month(1-12): ");
         month = int.Parse(ReadLine());
@@ -27,7 +27,7 @@ internal class Program
         WriteLine("************************************");
         WriteLine("enter number to Calculate Fibonacci Series: ");
         num = int.Parse(ReadLine());
-       // Program obj = new Program();
+        // Program obj = new Program();
         //obj.nth(num);
         WriteLine(nth(num));
         WriteLine("************************************");
@@ -36,14 +36,24 @@ internal class Program
         num1 = int.Parse(ReadLine());
 
         WriteLine("Factorial of " + num1 + " is " + factorial(num1));
-
+        WriteLine("************************************");
         WriteLine("Enter a number to calculate  the power: ");
         totl = int.Parse(ReadLine());
 
         WriteLine("Enter a number of power: ");
         totl1 = int.Parse(ReadLine());
 
-       WriteLine(power(totl,totl1));
+        WriteLine(power(totl, totl1));
+
+        WriteLine("************************************");
+        WriteLine("Enter a number to calculate  the power: ");
+        n1 = int.Parse(ReadLine());
+
+        WriteLine("Enter a number of power: ");
+        p2 = int.Parse(ReadLine());
+
+        WriteLine(powerRecursion(n1, p2));
+
 
 
 
@@ -54,7 +64,7 @@ internal class Program
         // task 1
         char a, e, i, o, u;
 
-       
+
 
         switch (chr)
         {
@@ -80,7 +90,7 @@ internal class Program
     static void theMonth(int month)
 
     {
-        
+
         switch (month)
         {
             case 1:
@@ -124,12 +134,12 @@ internal class Program
                 break;
         }
     }
-        //task 3
+    //task 3
 
     static void theGrade(char grd)
     {
         char A, B, C, D, F;
-        switch(grd)
+        switch (grd)
         {
             case 'A':
                 WriteLine("excellent performance");
@@ -185,7 +195,7 @@ internal class Program
                 break;
         }
     }
-    // recursive function tasks
+    // C# Recursion function tasks
     //task 1 Fibonacci Calculator
     static int nth(int num)
     {
@@ -195,8 +205,8 @@ internal class Program
             return num;
         }
         else
-           
-            return nth(num-1) + nth(num - 2);
+
+            return nth(num - 1) + nth(num - 2);
 
 
 
@@ -218,17 +228,32 @@ internal class Program
     static int power(int numb, int pwr)
     {
         int value = numb;
-        for (int i = 2; i <=pwr; i++)
+        for (int i = 2; i <= pwr; i++)
         {
-           
+
             value = value * numb;
         }
         return value;
     }
+    //calculate the power of number using Recursion  
 
-
+    static int powerRecursion(int n1, int p2)
+    {
+        if (p2 == 0)
+        {
+            return 1;
+        }
+        if (p2 == 1)
+        {
+            return n1;
+        }
+        else
+            return n1 * powerRecursion(n1, p2 - 1);
+    }
 
 }
+
+
 
 
     

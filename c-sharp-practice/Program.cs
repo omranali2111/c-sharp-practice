@@ -1,6 +1,7 @@
 ﻿
 using static System.Console;
 using System;
+using static System.Net.Mime.MediaTypeNames;
 
 internal class Program
 {
@@ -8,6 +9,7 @@ internal class Program
     {
         int day, month, num, num1, totl, totl1, n1, p2;
         char chr, grd;
+        string strg;
 
         WriteLine("enter number of a month(1-12): ");
         month = int.Parse(ReadLine());
@@ -53,6 +55,12 @@ internal class Program
         p2 = int.Parse(ReadLine());
 
         WriteLine(powerRecursion(n1, p2));
+
+        WriteLine("************************************");
+        WriteLine("write a string to check if it's palindrom ");
+        strg=Convert.ToString(ReadLine());
+        WriteLine(palindrome(strg));
+
 
 
 
@@ -250,7 +258,25 @@ internal class Program
         else
             return n1 * powerRecursion(n1, p2 - 1);
     }
+    //palindrome (check if string is palindrome)
+    static string palindrome(string strg)
+    {
+        int length = strg.Length;
 
+
+        if (strg[0] != strg[length-1])
+        {
+            
+            return "not palindrome";
+        }
+        else if(strg[0] == strg[length - 1])
+        {
+            return " palindrome";
+        }
+
+        return palindrome(strg.Substring(1, strg.Length - 2));
+      
+    }
 }
 
 

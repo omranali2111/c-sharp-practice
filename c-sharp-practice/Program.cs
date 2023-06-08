@@ -1,11 +1,12 @@
 ﻿
 using static System.Console;
+using System;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        int day,month,num,num1;
+        int day,month,num,num1,totl,totl1;
         char chr,grd;
 
         WriteLine("enter number of a month(1-12): ");
@@ -34,7 +35,16 @@ internal class Program
         WriteLine("Enter a number to calculate  the factorial: ");
         num1 = int.Parse(ReadLine());
 
-        Console.WriteLine("Factorial of " + num1 + " is " + factorial(num1));
+        WriteLine("Factorial of " + num1 + " is " + factorial(num1));
+
+        WriteLine("Enter a number to calculate  the power: ");
+        totl = int.Parse(ReadLine());
+
+        WriteLine("Enter a number of power: ");
+        totl1 = int.Parse(ReadLine());
+
+       WriteLine(power(totl,totl1));
+
 
 
     }
@@ -204,7 +214,17 @@ internal class Program
 
 
     }
-
+    // calculate the power of number 
+    static int power(int numb, int pwr)
+    {
+        int value = numb;
+        for (int i = 2; i <=pwr; i++)
+        {
+           
+            value = value * numb;
+        }
+        return value;
+    }
 
 
 
